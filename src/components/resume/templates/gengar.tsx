@@ -22,9 +22,10 @@ const sectionClassName = cn(
 export function GengarTemplate({ pageIndex, pageLayout }: TemplateProps) {
 	const isFirstPage = pageIndex === 0;
 	const { main, sidebar, fullWidth } = pageLayout;
+	const rtlDirection = useResumeStore((state) => state.resume.data.metadata.layout.rtlDirection);
 
 	return (
-		<div className="template-gengar page-content">
+		<div className="template-gengar page-content" style={{ direction: rtlDirection ? "rtl" : "ltr" }}>
 			<div className="flex">
 				<div data-layout="sidebar" className="group page-sidebar flex w-(--page-sidebar-width) shrink-0 flex-col">
 					{isFirstPage && <Header />}

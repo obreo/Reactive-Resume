@@ -22,9 +22,10 @@ const sectionClassName = cn(
 export function GlalieTemplate({ pageIndex, pageLayout }: TemplateProps) {
 	const isFirstPage = pageIndex === 0;
 	const { main, sidebar, fullWidth } = pageLayout;
+	const rtlDirection = useResumeStore((state) => state.resume.data.metadata.layout.rtlDirection);
 
 	return (
-		<div className="template-glalie page-content">
+		<div className="template-glalie page-content" style={{ direction: rtlDirection ? "rtl" : "ltr" }}>
 			<div className="flex">
 				<aside
 					data-layout="sidebar"

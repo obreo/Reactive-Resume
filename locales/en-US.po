@@ -1861,6 +1861,10 @@ msgstr "Resumes"
 msgid "Right Align"
 msgstr "Right Align"
 
+#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/index.tsx:109
+msgid "Right to Left Direction"
+msgstr "Right to Left Direction"
+
 #: src/utils/locale.ts:107
 msgid "Romanian"
 msgstr "Romanian"
@@ -1989,7 +1993,7 @@ msgstr "Show"
 msgid "Sidebar"
 msgstr "Sidebar"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/index.tsx:51
+#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/index.tsx:56
 msgid "Sidebar Width"
 msgstr "Sidebar Width"
 

@@ -21,13 +21,17 @@ const sectionClassName = cn(
 export function DitgarTemplate({ pageIndex, pageLayout }: TemplateProps) {
 	const isFirstPage = pageIndex === 0;
 	const { main, sidebar, fullWidth } = pageLayout;
+	const rtlDirection = useResumeStore((state) => state.resume.data.metadata.layout.rtlDirection);
 
 	const SummaryComponent = getSectionComponent("summary", {
 		sectionClassName: cn(sectionClassName, "px-(--page-margin-x) pt-(--page-margin-y)"),
 	});
 
 	return (
-		<div className="template-ditgar page-content grid min-h-[inherit] grid-cols-3">
+		<div
+			className="template-ditgar page-content grid min-h-[inherit] grid-cols-3"
+			style={{ direction: rtlDirection ? "rtl" : "ltr" }}
+		>
 			<div
 				data-layout="sidebar"
 				className={cn("sidebar group flex flex-col", !(isFirstPage || !fullWidth) && "hidden")}

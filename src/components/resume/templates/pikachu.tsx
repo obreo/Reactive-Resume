@@ -22,9 +22,13 @@ const sectionClassName = cn(
 export function PikachuTemplate({ pageIndex, pageLayout }: TemplateProps) {
 	const isFirstPage = pageIndex === 0;
 	const { main, sidebar, fullWidth } = pageLayout;
+	const rtlDirection = useResumeStore((state) => state.resume.data.metadata.layout.rtlDirection);
 
 	return (
-		<div className="template-pikachu page-content px-(--page-margin-x) py-(--page-margin-y) print:p-0">
+		<div
+			className="template-pikachu page-content px-(--page-margin-x) py-(--page-margin-y) print:p-0"
+			style={{ direction: rtlDirection ? "rtl" : "ltr" }}
+		>
 			<div className="flex gap-x-(--page-margin-x)">
 				<aside
 					data-layout="sidebar"

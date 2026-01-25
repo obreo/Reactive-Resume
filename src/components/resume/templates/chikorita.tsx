@@ -29,9 +29,10 @@ const sectionClassName = cn(
 export function ChikoritaTemplate({ pageIndex, pageLayout }: TemplateProps) {
 	const isFirstPage = pageIndex === 0;
 	const { main, sidebar, fullWidth } = pageLayout;
+	const rtlDirection = useResumeStore((state) => state.resume.data.metadata.layout.rtlDirection);
 
 	return (
-		<div className="template-chikorita page-content">
+		<div className="template-chikorita page-content" style={{ direction: rtlDirection ? "rtl" : "ltr" }}>
 			{isFirstPage && <Header />}
 
 			<div className="flex">
@@ -63,7 +64,7 @@ function Header() {
 
 	return (
 		<div className="page-header relative flex">
-			<div className="flex flex-1 items-center pt-(--page-margin-y) pl-(--page-margin-x)">
+			<div className="flex flex-1 items-center pt-(--page-margin-y) ps-(--page-margin-x)">
 				<PagePicture />
 
 				<div className="page-basics space-y-2 px-(--page-margin-x)">
